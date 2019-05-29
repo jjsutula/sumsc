@@ -1,0 +1,8 @@
+.codelite/
+*.workspace
+Makefile
+compile_commands.json
+*.mk
+*.project
+compile_flags.txt
+*.txt
