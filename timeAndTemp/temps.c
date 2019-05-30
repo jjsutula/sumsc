@@ -64,7 +64,7 @@ int main(int argc, char **argv)
     direction = NULL;
 
     // For each argument...
-    for (argNdx = 0; argNdx < argc; argNdx++) {
+    for (argNdx = 1; argNdx < argc; argNdx++) {
         // Get the next argument and see what it is
         arg = argv[argNdx];
         switch (arg[0]) {
