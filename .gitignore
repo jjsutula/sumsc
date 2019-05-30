@@ -6,3 +6,4 @@ compile_commands.json
 *.project
 compile_flags.txt
 *.txt
+Debug/
