@@ -4,23 +4,17 @@
 void calculator() {
     char quit = ' ';
     struct in_s in = {.left=0, .right=0, .op=' '};
+    int value;
 
-    printf("Anyone?\n");
-    
-    
     while (quit != 'q') {
         gatherInput(&in);
         if (in.op == 'q') {
             quit = 'q';
         } else {
-            printf("Left: %d, Right: %d, Op: '%c'\n", in.left, in.right, in.op);
+            value = doMath(&in);
+            printf("Value of %d %c %d = %d\n", in.left, in.op, in.right, value);
         }
     }
-    
-    /*
-            res = doMath(left, parts[1], right)
-            print(str(left) + ' ' + parts[1] + ' ' + str(right) + ' = ' + str(res))
-     */
 }
 
 void gatherInput(struct in_s *in ) {
@@ -45,7 +39,16 @@ void gatherInput(struct in_s *in ) {
 }
 
 int doMath(struct in_s *in) {
-    return 10;
+    char op = in->op;
+    if (op == '*') {
+        return in->left * in->right;
+    } else if (op == '/') {
+        return in->left / in->right;
+    } else if (op == '+') {
+        return in->left + in->right;
+    }
+
+    return in->left - in->right;
 }
 
 int main(int argc, char **argv)
